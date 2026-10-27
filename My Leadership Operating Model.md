@@ -1,7 +1,5 @@
 # My Leadership Operating Model
 
-Oct 27, 2026 · @Arvind
-
 How I personally work as VP, Architecture, day to day. It flows from what my role is, to what I keep in view, to the rhythm I follow, to how I communicate and make the case for investment, with templates for my monthly and quarterly reviews. The team's operating model is a separate document.
 
 ## My role and where my time goes
