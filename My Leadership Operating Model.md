@@ -77,7 +77,7 @@ I produce a small set of artifacts that set direction across platforms and win s
 | **Architecture strategy** | The 12–24 month direction across all three portfolios: principles, the biggest shifts, what we retire, what we need funded | Ops, product, engineering and Enterprise Architecture leadership; my manager | Annually, refreshed at mid-year | 6–8 pages | Platform target states, health trends, business plan |
 | **Portfolio or domain strategy** (for example cash management, post-trade) | Direction for one domain where a multi-year change is needed | Leaders of that domain; investment forum | When a domain needs a major shift; reviewed yearly | 8–12 pages, or a white paper plus a short deck | Target states, current-state assessment, industry practice |
 | **Investment case** | Win funding or priority for one change | Head of Product, investment forum, finance | When a proposal is ready; usually one or two a quarter | 1–2 pages | Pain logs, health data, four-part shape |
-| **Quarterly platform health and direction summary** | Show leaders where platforms stand, what changed, what we need from them | Head of MO Operations, Head of Product, engineering head, my manager | Quarterly, after my quarterly review | 1 page | Scorecards, quarterly review |
+| **Quarterly platform health and direction summary** | Show leaders where platforms stand, what changed, what we need from them | Head of Operations, Head of Product, engineering head, my manager | Quarterly, after my quarterly review | 1 page | Scorecards, quarterly review |
 | **Decision memo** | Record a cross-platform or enterprise-level decision and its rationale | The forum deciding; affected teams | As needed | 1–2 pages | ADRs, options analysis |
 | **Principles and the team operating model** | How the team works and judges designs | My architects; partners | Annually | As short as possible | Team input |
 
@@ -110,7 +110,7 @@ A strategy document makes a small number of choices, explains why, and asks for 
 
 - **Start from the ask.** Write section 9 first, then everything else so it earns that ask.
 - **Make real choices.** Every choice names what we are not doing. "Modernize the platform" is not a choice; "one trade record shared through events, instead of copies per team" is.
-- **Use their language.** Write for the Head of MO Operations, not for architects. Put system names in an appendix.
+- **Use their language.** Write for the Head of Operations, not for architects. Put system names in an appendix.
 - **Show, don't list.** One current-state picture and one target-state diagram do more than pages of text.
 - **Separate evidence from assumptions,** and label estimates as estimates.
 - **Keep it short.** 6–8 pages for the architecture strategy, with detail in appendices or the team's target states.
@@ -146,7 +146,7 @@ I lead with the answer, say plainly what I don't know, and turn technology const
 
 **Rules:**
 
-- Align with the Head of MO Engineering before raising their constraints with the business. No surprises.
+- Align with the Head of Engineering before raising their constraints with the business. No surprises.
 - Say "we" for technology, never "engineering doesn't…".
 - No long build-up, no over-apologizing, no bluffing.
 
@@ -170,24 +170,6 @@ I form a view early, label how sure I am, and present every investment in the sa
 **Close expectation gaps by asking.** Ask each senior partner "Six months from now, what would make architecture useful to you?" and ask my manager "What would I be doing differently that you'd notice?" Write the answers down and play them back.
 
 **Buy time well.** "I'll come back with a clear view by Thursday" is a strong answer, as long as Thursday's answer arrives in the four-part shape.
-
-### Investment case: cash platform
-
-1. **Problem:** we see about 20,000 cash variances a month (estimate), and the batch reconciliation cannot tell us during the day which funds' cash is trustworthy. The same feeds are read by both cash applications, and the buffer is applied in both.
-2. **Cost of doing nothing:** managers keep investing against numbers we cannot vouch for; double counting and day-0 differences stay invisible; every new vehicle adds more of the same. Under T+1, errors become overdrafts or failed purchases faster.
-3. **What we would change:** one buffer policy and one baseline contract for both applications, an intraday check by fund that flags weak numbers, and every flow entering once through a shared event layer.
-4. **What it unlocks:** a cash number the manager can trust and see the confidence of. First sign: cash available and projection day 0 agree every morning, and the variance count starts to fall.
-
-*Before using it:* replace the 20,000 estimate with a month of real data, and add the cost of one recent overdraft or near miss if there is one.
-
-### Investment case: post-trade platform
-
-1. **Problem:** every trade's lifecycle is tracked through a separate Activiti process, and trade messages to downstream teams run on a team-run broker outside enterprise standards. \[Add one number: daily trade volume or a recent lifecycle-related incident.\]
-2. **Cost of doing nothing:** lifecycle tracking limits throughput as volume grows; every lifecycle change needs a process redeploy; the non-standard broker carries support and resilience risk that rises over time.
-3. **What we would change:** the trade record holds its own lifecycle status, moved forward by trade and custodian messages, and trade messages move to the enterprise event platform.
-4. **What it unlocks:** same-day lifecycle status for every trade, faster product changes, and a standard, supported messaging backbone. First sign: the first asset type runs fully off Activiti with no status differences in parallel run.
-
-*Before using it:* confirm volume growth expectations with the Head of Product and the support position on the current broker with engineering.
 
 ## My templates
 
@@ -245,9 +227,9 @@ Copy each into a dated note when you use it. They draw on the team's scorecards 
 
 | Partner | State of the relationship | What they need from me | What I need from them | Next step |
 | --- | --- | --- | --- | --- |
-| Head of MO Operations |  |  |  |  |
+| Head of Operations |  |  |  |  |
 | Head of Product |  |  |  |  |
-| Head of MO Engineering |  |  |  |  |
+| Head of Engineering |  |  |  |  |
 | Enterprise Architecture |  |  |  |  |
 | My manager |  |  |  |  |
 
